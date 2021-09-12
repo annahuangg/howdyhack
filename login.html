@@ -1,29 +1,41 @@
 <html lang="en">
-	<head>
-		<!--<link rel='stylesheet' type='text/css' href='style.css'>-->
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
-		<title>Anna Huang</title>
-	</head>
-	<form action="action_page.php" method="post"> 
-		<br> <a class="active" href="profile.html">Profile</a>
-		<br> <a class="active" href="search.html"> Search</a>
-		<div class="container">
-		  <label for="uname"><b>Username</b></label>
-		  <input type="text" placeholder="Enter Username" name="uname" required>
-		  
-		  <label for="psw"><b>Password</b></label>
-		  <input type="password" placeholder="Enter Password" name="psw" required>
-		  <button type="submit">Login</button>
-		  <label>
-			<input type="checkbox" checked="checked" name="remember"> Remember me
-		  </label>
-		</div>
-	  
-		<div class="container" style="background-color:#f1f1f1">
-		  <button type="button" class="cancelbtn">Cancel</button>
-		  <span class="psw">Forgot <a href="#">password?</a></span>
-		</div>
-	  </form>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <title>Login</title>
+  <link rel="stylesheet" href="login-page.css">
+  <script defer src="login-page.js"></script>
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="login-header">Login</h1>
+        
+    <form id="login-form">
+      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+	  <button onclick="javascript:window.location.href='search.html'" value="Login" id="login-form-submit">Login</button>
+    </form>
+  </main>
+</body>
+<script>
+	const loginForm = document.getElementById("login-form");
+	const loginButton = document.getElementById("login-form-submit");
+	const loginErrorMsg = document.getElementById("login-error-msg");
+	loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+	const username = loginForm.username.value;
+	const password = loginForm.password.value;
+
+	if (username === "user" && password === "web_dev") {
+		alert("You have successfully logged in.");
+		location.reload();
+	} else {
+		loginErrorMsg.style.opacity = 1;
+	}
+	})
+</script>
+<!DOCTYPE html>
 </html>
