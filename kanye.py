@@ -1,7 +1,8 @@
 import requests
 
+# need to get input of username
 SPOTIFY_CREATE_PLAYLIST_URL = 'https://api.spotify.com/v1/users/am12012195/playlists'
-ACCESS_TOKEN = 'BQCnCM78HkELInUce2yZ42pyzprfRxFKXNhne7LMv5BZ4a12hMd26jLgutJ56FuKDR7EYhsuee2FFVdasSrB819SPgbmXd0KYqIA6gE0G3AigUfJWmzTFXc9p5RaHOo8wL1-epI7ZwyaUz13nk_ffZOkST2BZ8yti6Rv1hBGDkZKIej6Neu0ZmLrni_NMRaFb_BLH5qO'
+ACCESS_TOKEN = 'BQB0i-o5nKZ_fHhIXUFmCxzC3CXv4eshK1MAdvFUnjrmKtKyOGWTOWWEj5oFbL01cx84xg020d2eqNwF7xoZMLD-Byc2lMOIQYQMnSkhm9COdl54X5kEJjeRm87Jx6OoT7BPBZUS29sZlBVC3Umsyr6Zy1HRSr18ftQiuSIHpXJnJBto_GNNMz8dlY6ptanHRS6_u5Ja'
 
 def create_playlist_on_spotify(name, public):
     response = requests.post(
@@ -20,7 +21,7 @@ def create_playlist_on_spotify(name, public):
 
 def main():
     playlist = create_playlist_on_spotify(
-        name="My Private Playlist",
+        name="indie type beat",
         public=False
     )
 
